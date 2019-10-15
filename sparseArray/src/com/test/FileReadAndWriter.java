@@ -21,6 +21,7 @@ public class FileReadAndWriter {
             String path = FileReadAndWriter.class.getClassLoader().getResource("sparseArray.txt").getPath();
             FileWriter fileWriter = new FileWriter(path);
             System.out.println(path);
+
             fileWriter.write("股份的思考");
             fileWriter.write("dfhdkaschfv");
             fileWriter.write("45");
