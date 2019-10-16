@@ -8,6 +8,7 @@ import java.io.*;
 
 public class SparseArray {
     public static void main(String[] args) {
+        String path = SparseArray.class.getClassLoader().getResource("sparseArray.txt").getPath();
 //        创建棋盘
         int[][] chessArr1 = new int[11][11];
         chessArr1[1][2] = 1;
@@ -73,8 +74,7 @@ public class SparseArray {
 
 //        把稀疏数组写入磁盘
         try {
-            String path = SparseArray.class.getClassLoader().getResource("sparseArray.txt").getPath();
-//            System.out.println(path);
+            System.out.println(path);
             FileWriter fileWriter = new FileWriter(path);
             BufferedWriter bw = new BufferedWriter(fileWriter);
             for (int[] row : sparseArr) {
@@ -93,7 +93,6 @@ public class SparseArray {
 //        把稀疏数组从磁盘读出
         System.out.println("把稀疏数组从磁盘读出");
         try {
-            String path = SparseArray.class.getClassLoader().getResource("sparseArray.txt").getPath();
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
             String line = null;
             while ((line = bufferedReader.readLine()) != null) {
